@@ -31,9 +31,9 @@ insert into product (Pname, Classification_kids, Category, Avaliação, Size, Pr
 							 ('Cadeira', false, 'Móveis', 6,'40x40x80 cm', 89.99),
 							 ('Fone de Ouvido', false,'Eletrônico','7', '20x15x6 cm', 59.99);
                              
-select * from product;
 
 
+select * from payments;
 -- Inserir dados fictícios na tabela payments
 INSERT INTO payments (IdPayment, TypePayment, LimitAvailable)
 VALUES
@@ -53,7 +53,7 @@ VALUES
 
 INSERT INTO orders (IdOrder, OrderStatus, OrderDescription, SendValue, PaymentCash)
 VALUES
-    (1,  'Confirmado', 'Pedido de celular', 15, false),
+    (1, 'Confirmado', 'Pedido de celular', 15, false),
     (2,  'Em processamento', 'Pedido de camiseta e vestido', 20, false),
     (3,  'Confirmado', 'Pedido de brinquedos', 10, false),
     (4,  'Em processamento', 'Pedido de chocolate e arroz', 10, true),
@@ -112,21 +112,21 @@ insert into seller (SocialName, AbstName, CNPJ, CPF, Location, Contact)
 
 
 -- idPseller, idPproduct, prodQuantity
-insert into productSeller (IdProductSeller,ProdQuantity) 
+insert into productSeller (IdProductSeller,IdPproduct, ProdQuantity) 
 	values 
-		(1,10),
-		(2,20),
-		(3,15),
-		(4,30),
-		(5,25),
-		(6,12),
-		(7,18),
-		(8,8),
-		(9,5),
-		(10,40),
-		(11,5),
-		(12,8),
-		(13,3);
+		(1,1,11),
+		(2,2,20),
+		(3,3,15),
+		(4,5,30),
+		(5,5,25),
+		(6,6,12),
+		(7,7,18),
+		(8,8,8),
+		(9,9,5),
+		(10,10,40),
+		(11,11,5),
+		(12,12,8),
+		(13,13,3);
 	
 
 INSERT INTO productOrder (IdOrder,IdProduct,PoQuantity, POStatus)
@@ -146,7 +146,7 @@ VALUES
     (13,13,4, 'Disponível');
     
 
-INSERT INTO productSuplier (IdProduct, IdSuplier, Quantity)
+INSERT INTO productSuplier (IdProduct, IdSupplier, Quantity)
 VALUES
     (1, 1, 50),
     (2, 2, 30),
